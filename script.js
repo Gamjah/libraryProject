@@ -25,10 +25,10 @@ function arrayChecker(array) {
     }
 }
 
-arrayChecker(myLibrary)
-
 document.getElementById("bookForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent form submission from refreshing the page
+    event.preventDefault(); // Prevent the form from refreshing the page
+
+    console.log("Form submitted!"); // Debugging log
 
     // Retrieve input values
     const title = document.getElementById("name").value;
@@ -39,10 +39,6 @@ document.getElementById("bookForm").addEventListener("submit", function (event) 
     addBookToLibrary(newBook);
 
     // Log the updated library
-    console.log(myLibrary);
-
-    // Optionally, reset the form
-    event.target.reset();
+    console.log("Updated library:", myLibrary);
+    arrayChecker(myLibrary);
 });
-
-arrayChecker(myLibrary)
